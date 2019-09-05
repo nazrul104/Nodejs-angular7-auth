@@ -1,0 +1,12 @@
+<mat-card>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Search user by name" aria-label="State" [matAutocomplete]="auto" [formControl]="userCtrl" (keyup)="onChange($event)">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of userList" [value]="item.name">
+        <span>{{item.name}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+</mat-card>

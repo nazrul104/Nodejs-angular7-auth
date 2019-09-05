@@ -1,0 +1,65 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Create New Account</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form novalidate (ngSubmit)="submitRegistrationForm()" [formGroup]="myForm">
+      <mat-form-field class="w-100" appearance="fill">
+        <i matPrefix class="prefix-icon flaticon-user"></i>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="enter your name" type="text" formControlName="name" [maxlength]="35">
+        <mat-error *ngIf="myForm.controls.name.errors?.required  && (myForm.controls.name.dirty || myForm.controls.name.touched)">Name is required</mat-error>
+        <mat-hint *ngIf="myForm.controls.name?.errors?.minlength && myForm.controls.name.touched">Maximum 35 characters!</mat-hint>
+        <mat-hint
+          *ngIf="myForm.controls.name.errors && myForm.controls.name.errors.pattern && myForm.controls.name.touched">
+          Only accept alphabet!
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field class="w-100" appearance="fill">
+        <i matPrefix class="prefix-icon flaticon-email"></i>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="enter your email" type="email" formControlName="email" autocomplete="true">
+        <mat-error
+          *ngIf="myForm.controls.email.errors?.required  && (myForm.controls.email.dirty || myForm.controls.email.touched)">
+          Email is required
+        </mat-error>
+        <mat-hint
+          *ngIf="myForm.controls.email.errors && myForm.controls.email.errors.pattern && myForm.controls.email.touched">
+          Email is invalid
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field class="w-100" appearance="fill">
+        <i matPrefix class="prefix-icon flaticon-settings"></i>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="enter your password" type="password" formControlName="password"
+               autocomplete="new-password">
+
+        <mat-error
+          *ngIf="myForm.controls.password.errors?.required  && (myForm.controls.password.dirty || myForm.controls.password.touched)">
+          Password is required
+        </mat-error>
+        <mat-hint *ngIf="myForm.controls.password?.errors?.minlength && myForm.controls.password.touched">Minimum 6
+          characters
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="w-100" appearance="fill">
+        <i matPrefix class="prefix-icon flaticon-repeat"></i>
+        <mat-label>Re-type Password</mat-label>
+        <input matInput placeholder="enter same password"  type="password" formControlName="password_confirmation">
+
+        <mat-error *ngIf="myForm.controls.password_confirmation.errors?.required  && (myForm.controls.password_confirmation.dirty || myForm.controls.password_confirmation.touched)">Password is required</mat-error>
+        <mat-hint *ngIf="myForm.controls.password_confirmation.errors?.MatchPassword  && (myForm.controls.password_confirmation.dirty || myForm.controls.password_confirmation.touched)">Password doesn't match</mat-hint>
+      </mat-form-field>
+
+      <div class="button">
+        <button mat-button [disabled]="myForm.invalid">Submit</button>
+      </div>
+
+
+      <a href="/login" class="signBtn">
+        Login
+      </a>
+    </form>
+  </mat-card-content>
+</mat-card>
