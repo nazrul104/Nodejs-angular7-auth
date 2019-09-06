@@ -19,16 +19,14 @@ To get the Angular app running locally:
 
 ## Prerequisite
 
-* [PHP >= 7](https://nodejs.org): runtime environment
+* [NodeJS >= 11.1.0](https://nodejs.org): runtime environment
 * [MongoDB](https://www.mongodb.com): database
-* [Slim API](https://github.com/me-io/slim-api): backend framework
 * [Angular CLI](https://cli.angular.io): frontend scaffolding
 
 ## Uses
 
 * [Angular 7+](https://angular.io): frontend framework
-* [Bootstrap](http://www.getbootstrap.com): layout and styles
-* [Font Awesome](http://fontawesome.io): icons
+* [Material](https://v7.material.angular.io/): layout and styles
 
 ## Prerequisites
 
