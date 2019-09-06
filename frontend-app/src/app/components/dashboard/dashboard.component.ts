@@ -9,11 +9,9 @@ import {HttpService} from '../../services/http.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userCtrl = new FormControl();
   userList: Observable<any[]>;
 
   constructor(private  http: HttpService) {
-    console.log(this.userCtrl.valueChanges);
   }
 
   ngOnInit() {

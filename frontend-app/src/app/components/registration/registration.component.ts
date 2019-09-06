@@ -33,6 +33,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.auth.isLoggedIn());
     if (this.auth.isLoggedIn()) {
       this.router.navigateByUrl('/');
     }

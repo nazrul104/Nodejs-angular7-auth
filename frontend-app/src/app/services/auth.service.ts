@@ -9,18 +9,16 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 export class AuthService implements CanActivate {
   public myRawToken;
   isExpired: any;
-  helper = new JwtHelperService();
 
-  constructor(private router: Router) {
-    this.isExpired = false;
+  constructor(private router: Router, public jwtHelper: JwtHelperService) {
     if (localStorage.getItem('access_token')) {
       this.myRawToken = localStorage.getItem('access_token');
-      this.isExpired = this.helper.isTokenExpired(this.myRawToken);
+      this.isExpired = this.jwtHelper.isTokenExpired(this.myRawToken);
     }
   }
 
   canActivate() {
-    if (this.helper.isTokenExpired(this.myRawToken) === false) {
+    if (this.jwtHelper.isTokenExpired(this.myRawToken) === false) {
       return true;
     } else {
       this.router.navigateByUrl('login');
@@ -29,6 +27,6 @@ export class AuthService implements CanActivate {
   }
 
   isLoggedIn() {
-    return this.isExpired === false ? true : false;
+    return this.isExpired;
   }
 }

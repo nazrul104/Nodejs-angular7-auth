@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  API_URL = 'http://localhost:3000/';
+  API_URL = 'http://3.9.171.225:3000/';
 
   constructor(private http: HttpClient) {
   }

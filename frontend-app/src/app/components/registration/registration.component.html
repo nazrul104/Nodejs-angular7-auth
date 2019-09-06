@@ -8,8 +8,13 @@
         <i matPrefix class="prefix-icon flaticon-user"></i>
         <mat-label>Name</mat-label>
         <input matInput placeholder="enter your name" type="text" formControlName="name" [maxlength]="35">
-        <mat-error *ngIf="myForm.controls.name.errors?.required  && (myForm.controls.name.dirty || myForm.controls.name.touched)">Name is required</mat-error>
-        <mat-hint *ngIf="myForm.controls.name?.errors?.minlength && myForm.controls.name.touched">Maximum 35 characters!</mat-hint>
+        <mat-error
+          *ngIf="myForm.controls.name.errors?.required  && (myForm.controls.name.dirty || myForm.controls.name.touched)">
+          Name is required
+        </mat-error>
+        <mat-hint *ngIf="myForm.controls.name?.errors?.minlength && myForm.controls.name.touched">Maximum 35
+          characters!
+        </mat-hint>
         <mat-hint
           *ngIf="myForm.controls.name.errors && myForm.controls.name.errors.pattern && myForm.controls.name.touched">
           Only accept alphabet!
@@ -46,10 +51,16 @@
       <mat-form-field class="w-100" appearance="fill">
         <i matPrefix class="prefix-icon flaticon-repeat"></i>
         <mat-label>Re-type Password</mat-label>
-        <input matInput placeholder="enter same password"  type="password" formControlName="password_confirmation">
+        <input matInput placeholder="enter same password" type="password" formControlName="password_confirmation">
 
-        <mat-error *ngIf="myForm.controls.password_confirmation.errors?.required  && (myForm.controls.password_confirmation.dirty || myForm.controls.password_confirmation.touched)">Password is required</mat-error>
-        <mat-hint *ngIf="myForm.controls.password_confirmation.errors?.MatchPassword  && (myForm.controls.password_confirmation.dirty || myForm.controls.password_confirmation.touched)">Password doesn't match</mat-hint>
+        <mat-error
+          *ngIf="myForm.controls.password_confirmation.errors?.required  && (myForm.controls.password_confirmation.dirty || myForm.controls.password_confirmation.touched)">
+          Password is required
+        </mat-error>
+        <mat-hint
+          *ngIf="myForm.controls.password_confirmation.errors?.MatchPassword  && (myForm.controls.password_confirmation.dirty || myForm.controls.password_confirmation.touched)">
+          Password doesn't match
+        </mat-hint>
       </mat-form-field>
 
       <div class="button">
