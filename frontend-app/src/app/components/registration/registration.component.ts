@@ -42,9 +42,10 @@ export class RegistrationComponent implements OnInit {
   submitRegistrationForm() {
     this.http.registrationService(this.myForm.value).subscribe(res => {
       if (res && res.status) {
-        localStorage.setItem('access_token', res.token);
-        localStorage.setItem('user', JSON.stringify(res.data));
-        this.router.navigateByUrl('/');
+        /* localStorage.setItem('access_token', res.token);
+         localStorage.setItem('user', JSON.stringify(res.data));
+         this.router.navigateByUrl('/');*/
+        this.myForm.reset({});
       } else {
         this.snackBar.open(res.msg, 'Undo', {
           duration: 3000
